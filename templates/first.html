@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+        <title>Restaurant Review Analyser</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='food-favicon.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+	</head>
+
+	<body style="background-color:yellow">
+		
+	</style>>
+ 
+
+		<!-- Website Title -->
+    	<div class="container">
+            <h2  style ="text-align:center;"class='container-heading'><span class="heading_font" >RESTAURANT REVIEW</h2>
+
+            <div class='description'>
+            	<p style ="text-align:center;">The purpose of this analysis is to build a prediction model to predict whether a review on the restaurant is positive or negative.</p>
+    			<p style ="text-align:center;">A Machine Learning Web App, Built with Flask </p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results" style ="text-align:center;">
+			{% if prediction==1 %}
+				<h1>Prediction: <span class='safe'>Great! This is a POSITIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='positive-review.webp') }}" alt="Positive Review">
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='danger'>Oops! This is a NEGATIVE Review.</span></h1>
+				<img class="gif" src="{{ url_for('static', filename='negative-review.webp') }}" alt="Negative Review">
+			{% endif %}
+		</div>
+ 
+
+	</body>
+</html>
